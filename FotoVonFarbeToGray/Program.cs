@@ -1057,6 +1057,712 @@ public static class Program
         }
     }
 
+    public static void FotoSepia(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.Sepia()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_Sepia.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rSepia: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nSepia abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoVignette(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.Vignette()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_Vignette.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rVignette: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nVignette abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoBlackWhite(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.BlackWhite()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_BlackWhite.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rBlackWhite: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nBlackWhite abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoBokehBlur(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.BokehBlur()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_BokehBlur.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rBokehBlur: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nBokehBlur abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoBoxBlur(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.BoxBlur()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_BoxBlur.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rBoxBlur: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nBoxBlur abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoDetectEdges(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.DetectEdges()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_DetectEdges.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rDetectEdges: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nDetectEdges abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoDither(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.Dither()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_Dither.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rDither: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nDither abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoEntropyCrop(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.EntropyCrop()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_EntropyCrop.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rEntropyCrop: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nEntropyCrop abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoGlow(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.Glow()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_Glow.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rGlow: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nGlow abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoHistogramEqualization(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.HistogramEqualization()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_HistogramEqualization.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rHistogramEqualization: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nHistogramEqualization abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoInvert(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.Invert()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_Invert.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rInvert: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nInvert abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoKodachrome(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.Kodachrome()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_Kodachrome.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rKodachrome: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nKodachrome abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoLomograph(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.Lomograph()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_Lomograph.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rLomograph: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nLomograph abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoOilPaint(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.OilPaint()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_OilPaint.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rOilPaint: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nOilPaint abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoPixelate(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.Pixelate()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_Pixelate.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rPixelate: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nPixelate abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+    public static void FotoPolaroid(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+            foreach (var item in dataPath)
+            {
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                //string outputFileName = $"{fileNameWithoutExtension}_R.png";
+
+
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        using (var resizedImage = image.Clone(x => x.Polaroid()))
+                        {
+                            string outputFileName = $"{fileNameWithoutExtension}_Polaroid.png";
+                            string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                            resizedImage.Save(outputFilePath);
+                        }
+
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rPolaroid: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
+                }
+
+            }
+            Console.WriteLine("\nPolaroid abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während der Resize {ex.Message}");
+        }
+    }
+
+
+
     #endregion
 
     public static void FotoBearbeitung(string path)
@@ -1144,9 +1850,10 @@ public static class Program
     private static void Main(string[] args)
     {
         bool arbeit = true;
+        Console.WriteLine("Achtung! 1 Bild += 52");
         while (arbeit)
         {
-            Console.WriteLine("Achtung! 1 Bild = +52");
+
             Console.WriteLine("1. start");
 
             int option = Convert.ToInt32(Console.ReadLine());
