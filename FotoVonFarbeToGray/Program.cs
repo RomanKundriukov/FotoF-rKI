@@ -102,8 +102,12 @@ public static class Program
 
     public static void FotoResize(List<string> dataPath, string directoryPath)
     {
+
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -138,9 +142,14 @@ public static class Program
                     {
                         continue;
                     }
+
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rResize: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nResize abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -152,6 +161,9 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -185,9 +197,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rRotation: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nRotation abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -199,6 +215,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -224,9 +242,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rFlip Horisontal: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nFlip Horisontal abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -238,6 +260,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -263,9 +287,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rFlip Vertical: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nFlip Vertical abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -277,6 +305,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -303,7 +333,12 @@ public static class Program
                     {
                         continue;
                     }
+                    // Aktualisiere die Fortschrittsanzeige
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rFarbe Gray: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
+                Console.WriteLine("\nFarbe Gray abgeschlossen!");
 
             }
         }
@@ -317,6 +352,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -346,9 +383,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rBrightness Dunkel: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nBrightness Dunkel abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -360,6 +401,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -389,9 +432,14 @@ public static class Program
                     {
                         continue;
                     }
+                    // Aktualisiere die Fortschrittsanzeige
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rBrightness Hell: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nBrightness Hell abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -403,6 +451,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -432,9 +482,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rContrast niedrig: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nContrast niedrig abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -446,6 +500,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -475,9 +531,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rContrast hoch: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nContrast hoch abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -489,6 +549,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -518,9 +580,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rSaturate niedrig: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nSaturate niedrig abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -532,6 +598,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -561,9 +629,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rSaturate hoch: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nSaturate hoch abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -575,6 +647,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -601,9 +675,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rGaussian Blur: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nGaussian Blur abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -615,6 +693,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -641,9 +721,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rGaussian Sharpen: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nGaussian Sharpen abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -656,6 +740,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -682,11 +768,15 @@ public static class Program
 
 
                         }
+                        Console.WriteLine("\nSkew Plus abgeschlossen!");
                     }
                     else
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rSkew Plus: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
@@ -701,6 +791,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -731,9 +823,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rSkew Minus: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nSkew Minus abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -745,6 +841,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -769,9 +867,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rAdaptive Threshold: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nAdaptive Threshold abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -783,6 +885,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -807,9 +911,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rQuantize WebSafe: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nQuantize Web Safe abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -821,6 +929,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -845,9 +955,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rQuantize Octree: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nQuantize Octree abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -859,6 +973,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -883,9 +999,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rQuantize Wu: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nQuantize Wu abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -897,6 +1017,8 @@ public static class Program
     {
         try
         {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
             foreach (var item in dataPath)
             {
                 string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
@@ -921,9 +1043,13 @@ public static class Program
                     {
                         continue;
                     }
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rQuantize Werner: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
             }
+            Console.WriteLine("\nQuantize Werner abgeschlossen!");
         }
         catch (Exception ex)
         {
