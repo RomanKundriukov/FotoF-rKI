@@ -1,4 +1,5 @@
 ﻿using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 
@@ -102,11 +103,67 @@ public static class Program
 
     #region Foto Bearbeitung
 
+    public static void FotoFormatÄndern(List<string> dataPath, string directoryPath)
+    {
+        try
+        {
+            int totalImages = dataPath.Count;
+            int currentImage = 0;
+
+            foreach (var item in dataPath)
+            {
+                // Originaldatei-Informationen
+                string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(item);
+                string outputFileName = $"{fileNameWithoutExtension}_to_png.png";  // Speicher als PNG
+                string outputFilePath = Path.Combine(directoryPath, outputFileName);
+
+                // Lade das Bild
+                using (Image<Rgba32> image = Image.Load<Rgba32>(item))
+                {
+                    // Überprüfe, ob das Bild valide ist (Breite und Höhe > 0)
+                    if (image.Height != 0 && image.Width != 0)
+                    {
+                        // Speichere das Bild im PNG-Format
+                        image.Save(outputFilePath, new PngEncoder());
+
+                        // Lösche die Originaldatei, falls sie nicht bereits PNG ist
+                        if (!item.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
+                        {
+                            File.Delete(item);
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        // Überspringe das Bild, wenn es ungültig ist
+                        continue;
+                    }
+
+                    // Fortschritt berechnen und anzeigen
+                    currentImage++;
+                    double progress = (double)currentImage / totalImages * 100;
+                    Console.Write($"\rFormat ändern: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
+                }
+            }
+
+            Console.WriteLine("\nFormat ändern abgeschlossen!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Fehler während des Formatwechsels: {ex.Message}");
+        }
+    }
+
     public static void FotoResize(List<string> dataPath, string directoryPath)
     {
 
         try
         {
+            // List<string> formats = GetFileFormats(directoryPath);
+
             int totalImages = dataPath.Count;
             int currentImage = 0;
 
@@ -131,7 +188,8 @@ public static class Program
 
                             using (var resizedImage = image.Clone(x => x.Resize(newWidth, newHeight)))
                             {
-                                string outputFileName = $"{fileNameWithoutExtension}_Resize{scaleFactor}.png";
+                                var format = image.Metadata.DecodedImageFormat;
+                                string outputFileName = $"{fileNameWithoutExtension}_Resize{scaleFactor}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                                 resizedImage.Save(outputFilePath);
@@ -1780,57 +1838,101 @@ public static class Program
             if (_files != null && _directory == null)
             {
                 //aufrufen Methode
-                Console.WriteLine($"{path}\n");
+                //Console.WriteLine($"{path}\n");
+                //FotoFormatÄndern(_files, path);
+
+                _directory = GetAllOrdner(path);
+                _files = GetAllFiles(path);
+
                 FotoResize(_files, path);
-                FotoRotation(_files, path);
-                FotoFlipHorisontal(_files, path);
-                FotoFlipVertical(_files, path);
-                FotoBrightnessDunkel(_files, path);
-                FotoBrightnessHell(_files, path);
-                FotoContrastOben(_files, path);
-                FotoContrastUnten(_files, path);
-                FotoGaussianBlur(_files, path);
-                FotoSaturateOben(_files, path);
-                FotoSaturateUnten(_files, path);
-                FotoSepia(_files, path);
-                FotoBlackWhite(_files, path);
-                FotoInvert(_files, path);
-                FotoDetectEdges(_files, path);
-                FotoEntropyCrop(_files, path);
-                FotoHistogramEqualization(_files, path);
-                FotoSkewPlus(_files, path);
-                FotoSkewMinus(_files, path);
+                //FotoRotation(_files, path);
+                //FotoFlipHorisontal(_files, path);
+                //FotoFlipVertical(_files, path);
+                //FotoBrightnessDunkel(_files, path);
+                //FotoBrightnessHell(_files, path);
+                //FotoContrastOben(_files, path);
+                //FotoContrastUnten(_files, path);
+                //FotoGaussianBlur(_files, path);
+                //FotoSaturateOben(_files, path);
+                //FotoSaturateUnten(_files, path);
+                //FotoSepia(_files, path);
+                //FotoBlackWhite(_files, path);
+                //FotoInvert(_files, path);
+                //FotoDetectEdges(_files, path);
+                //FotoEntropyCrop(_files, path);
+                //FotoHistogramEqualization(_files, path);
+                //FotoSkewPlus(_files, path);
+                //FotoSkewMinus(_files, path);
 
             }
             else
             {
+                //foreach (var item in _directory)
+                //{
+                //    var task = Task.Run(() =>
+                //    {
+                //        List<string> dirFiles = GetAllFiles(item);
+
+                //        Console.WriteLine($"Verarbeite Verzeichnis: {item} in Task ID: {Task.CurrentId}");
+
+                //        FotoFormatÄndern(dirFiles, item);
+
+                //        // Dateien erneut abrufen, falls nötig
+                //        dirFiles = GetAllFiles(item);
+
+                //        // Weitere Bildverarbeitungsschritte
+                //        FotoResize(dirFiles, item);
+                //        FotoRotation(dirFiles, item);
+                //        FotoFlipHorisontal(dirFiles, item);
+                //        FotoFlipVertical(dirFiles, item);
+                //        FotoBrightnessDunkel(dirFiles, item);
+                //        FotoBrightnessHell(dirFiles, item);
+                //        FotoContrastOben(dirFiles, item);
+                //        FotoContrastUnten(dirFiles, item);
+                //        FotoGaussianBlur(dirFiles, item);
+                //        FotoSaturateOben(dirFiles, item);
+                //        FotoSaturateUnten(dirFiles, item);
+                //        FotoSepia(dirFiles, item);
+                //        FotoBlackWhite(dirFiles, item);
+                //        FotoInvert(dirFiles, item);
+                //        FotoDetectEdges(dirFiles, item);
+                //        FotoEntropyCrop(dirFiles, item);
+                //        FotoHistogramEqualization(dirFiles, item);
+                //        FotoSkewPlus(dirFiles, item);
+                //        FotoSkewMinus(dirFiles, item);
+                //    });
+                //}
+
                 Parallel.ForEach(_directory, item =>
                 {
-                    Console.WriteLine($"{item}\n");
+                    //Console.WriteLine($"{item}");
                     List<string> _dirFiles = new();
                     _dirFiles = GetAllFiles(item);
 
-                    FotoResize(_dirFiles, item);
-                    FotoRotation(_dirFiles, item);
-                    FotoFlipHorisontal(_dirFiles, item);
-                    FotoFlipVertical(_dirFiles, item);
-                    FotoBrightnessDunkel(_dirFiles, item);
-                    FotoBrightnessHell(_dirFiles, item);
-                    FotoContrastOben(_dirFiles, item);
-                    FotoContrastUnten(_dirFiles, item);
-                    FotoGaussianBlur(_dirFiles, item);
-                    FotoSaturateOben(_dirFiles, item);
-                    FotoSaturateUnten(_dirFiles, item);
-                    FotoSepia(_dirFiles, item);
-                    FotoBlackWhite(_dirFiles, item);
-                    FotoInvert(_dirFiles, item);
-                    FotoDetectEdges(_dirFiles, item);
-                    FotoEntropyCrop(_dirFiles, item);
-                    FotoHistogramEqualization(_dirFiles, item);
-                    FotoSkewPlus(_dirFiles, item);
-                    FotoSkewMinus(_dirFiles, item);
-                });
+                    //FotoFormatÄndern(_dirFiles, item);
 
+                    //_dirFiles = GetAllFiles(item);
+
+                    FotoResize(_dirFiles, item);
+                    //FotoRotation(_dirFiles, item);
+                    //FotoFlipHorisontal(_dirFiles, item);
+                    //FotoFlipVertical(_dirFiles, item);
+                    //FotoBrightnessDunkel(_dirFiles, item);
+                    //FotoBrightnessHell(_dirFiles, item);
+                    //FotoContrastOben(_dirFiles, item);
+                    //FotoContrastUnten(_dirFiles, item);
+                    //FotoGaussianBlur(_dirFiles, item);
+                    //FotoSaturateOben(_dirFiles, item);
+                    //FotoSaturateUnten(_dirFiles, item);
+                    //FotoSepia(_dirFiles, item);
+                    //FotoBlackWhite(_dirFiles, item);
+                    //FotoInvert(_dirFiles, item);
+                    //FotoDetectEdges(_dirFiles, item);
+                    //FotoEntropyCrop(_dirFiles, item);
+                    //FotoHistogramEqualization(_dirFiles, item);
+                    //FotoSkewPlus(_dirFiles, item);
+                    //FotoSkewMinus(_dirFiles, item);
+                });
 
             }
 
