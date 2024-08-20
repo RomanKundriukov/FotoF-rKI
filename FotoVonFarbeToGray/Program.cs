@@ -147,7 +147,6 @@ public static class Program
 
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rResize: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -202,7 +201,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rRotation: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -248,7 +246,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rFlip Horisontal: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -294,7 +291,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rFlip Vertical: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -342,7 +338,6 @@ public static class Program
                     // Aktualisiere die Fortschrittsanzeige
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rFarbe Gray: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
                 Console.WriteLine("\nFarbe Gray abgeschlossen!");
@@ -392,7 +387,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rBrightness Dunkel: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -443,7 +437,6 @@ public static class Program
                     // Aktualisiere die Fortschrittsanzeige
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rBrightness Hell: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -493,7 +486,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rContrast niedrig: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -543,7 +535,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rContrast hoch: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -593,7 +584,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rSaturate niedrig: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -643,7 +633,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rSaturate hoch: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -690,7 +679,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rGaussian Blur: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -737,7 +725,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rGaussian Sharpen: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -791,7 +778,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rSkew Plus: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -841,7 +827,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rSkew Minus: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -886,7 +871,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rAdaptive Threshold: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -931,7 +915,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rQuantize WebSafe: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -976,7 +959,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rQuantize Octree: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1021,7 +1003,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rQuantize Wu: [{new string('#', currentImage)}{new string(' ', totalImages - currentImage)}] {progress:F2}%");
                 }
 
@@ -1066,7 +1047,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rQuantize Werner: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1111,7 +1091,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rSepia: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1156,7 +1135,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rVignette: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1201,7 +1179,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rBlackWhite: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1246,7 +1223,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rBokehBlur: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1291,7 +1267,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rBoxBlur: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1336,7 +1311,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rDetectEdges: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1381,7 +1355,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rDither: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1426,7 +1399,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rEntropyCrop: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1471,7 +1443,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rGlow: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1516,7 +1487,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rHistogramEqualization: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1561,7 +1531,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rInvert: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1606,7 +1575,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rKodachrome: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1651,7 +1619,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rLomograph: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1696,7 +1663,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rOilPaint: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1741,7 +1707,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rPixelate: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1786,7 +1751,6 @@ public static class Program
                     }
                     currentImage++;
                     double progress = (double)currentImage / totalImages * 100;
-                    Console.WriteLine($"{item}\n");
                     Console.Write($"\rPolaroid: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
 
@@ -1816,7 +1780,7 @@ public static class Program
             if (_files != null && _directory == null)
             {
                 //aufrufen Methode
-
+                Console.WriteLine($"{path}\n");
                 FotoResize(_files, path);
                 FotoRotation(_files, path);
                 FotoFlipHorisontal(_files, path);
@@ -1842,6 +1806,7 @@ public static class Program
             {
                 Parallel.ForEach(_directory, item =>
                 {
+                    Console.WriteLine($"{item}\n");
                     List<string> _dirFiles = new();
                     _dirFiles = GetAllFiles(item);
 
