@@ -1,5 +1,10 @@
 ﻿using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Formats.Bmp;
+using SixLabors.ImageSharp.Formats.Gif;
+using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Formats.Png;
+using SixLabors.ImageSharp.Formats.Tiff;
+using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 
@@ -191,8 +196,33 @@ public static class Program
                                 var format = image.Metadata.DecodedImageFormat;
                                 string outputFileName = $"{fileNameWithoutExtension}_Resize{scaleFactor}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
+                                switch (format.Name.ToLower())
+                                {
+                                    case "png":
+                                        resizedImage.Save(outputFilePath, new PngEncoder());
+                                        break;
+                                    case "jpeg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "jpg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "bmp":
+                                        resizedImage.Save(outputFilePath, new BmpEncoder());
+                                        break;
+                                    case "gif":
+                                        resizedImage.Save(outputFilePath, new GifEncoder());
+                                        break;
+                                    case "tiff":
+                                        resizedImage.Save(outputFilePath, new TiffEncoder());
+                                        break;
+                                    case "webp":
+                                        resizedImage.Save(outputFilePath, new WebpEncoder());
+                                        break;
 
-                                resizedImage.Save(outputFilePath);
+                                    default:
+                                        break;
+                                }
                             }
 
                             scaleFactor += 0.25;
@@ -249,7 +279,33 @@ public static class Program
                                 string outputFileName = $"{fileNameWithoutExtension}_Rotation{rotateFactor}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                                resizedImage.Save(outputFilePath);
+                                switch (format.Name.ToLower())
+                                {
+                                    case "png":
+                                        resizedImage.Save(outputFilePath, new PngEncoder());
+                                        break;
+                                    case "jpeg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "jpg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "bmp":
+                                        resizedImage.Save(outputFilePath, new BmpEncoder());
+                                        break;
+                                    case "gif":
+                                        resizedImage.Save(outputFilePath, new GifEncoder());
+                                        break;
+                                    case "tiff":
+                                        resizedImage.Save(outputFilePath, new TiffEncoder());
+                                        break;
+                                    case "webp":
+                                        resizedImage.Save(outputFilePath, new WebpEncoder());
+                                        break;
+
+                                    default:
+                                        break;
+                                }
                             }
 
                             rotateFactor += 90;
@@ -298,7 +354,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_FlipHorisontal.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            resizedImage.Save(outputFilePath); switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -345,7 +427,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_FlipVertical.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -393,7 +501,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_FarbeGray.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -443,7 +577,33 @@ public static class Program
                                 string outputFileName = $"{fileNameWithoutExtension}_BrightnessDunkel{_brightness}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                                resizedImage.Save(outputFilePath);
+                                switch (format.Name.ToLower())
+                                {
+                                    case "png":
+                                        resizedImage.Save(outputFilePath, new PngEncoder());
+                                        break;
+                                    case "jpeg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "jpg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "bmp":
+                                        resizedImage.Save(outputFilePath, new BmpEncoder());
+                                        break;
+                                    case "gif":
+                                        resizedImage.Save(outputFilePath, new GifEncoder());
+                                        break;
+                                    case "tiff":
+                                        resizedImage.Save(outputFilePath, new TiffEncoder());
+                                        break;
+                                    case "webp":
+                                        resizedImage.Save(outputFilePath, new WebpEncoder());
+                                        break;
+
+                                    default:
+                                        break;
+                                }
                             }
 
                             _brightness -= 0.25f;
@@ -494,7 +654,33 @@ public static class Program
                                 string outputFileName = $"{fileNameWithoutExtension}_BrightnessHell{_brightness}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                                resizedImage.Save(outputFilePath);
+                                switch (format.Name.ToLower())
+                                {
+                                    case "png":
+                                        resizedImage.Save(outputFilePath, new PngEncoder());
+                                        break;
+                                    case "jpeg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "jpg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "bmp":
+                                        resizedImage.Save(outputFilePath, new BmpEncoder());
+                                        break;
+                                    case "gif":
+                                        resizedImage.Save(outputFilePath, new GifEncoder());
+                                        break;
+                                    case "tiff":
+                                        resizedImage.Save(outputFilePath, new TiffEncoder());
+                                        break;
+                                    case "webp":
+                                        resizedImage.Save(outputFilePath, new WebpEncoder());
+                                        break;
+
+                                    default:
+                                        break;
+                                }
                             }
 
                             _brightness += 0.25f;
@@ -546,7 +732,33 @@ public static class Program
                                 string outputFileName = $"{fileNameWithoutExtension}_ContrastUnten{Contrast}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                                resizedImage.Save(outputFilePath);
+                                switch (format.Name.ToLower())
+                                {
+                                    case "png":
+                                        resizedImage.Save(outputFilePath, new PngEncoder());
+                                        break;
+                                    case "jpeg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "jpg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "bmp":
+                                        resizedImage.Save(outputFilePath, new BmpEncoder());
+                                        break;
+                                    case "gif":
+                                        resizedImage.Save(outputFilePath, new GifEncoder());
+                                        break;
+                                    case "tiff":
+                                        resizedImage.Save(outputFilePath, new TiffEncoder());
+                                        break;
+                                    case "webp":
+                                        resizedImage.Save(outputFilePath, new WebpEncoder());
+                                        break;
+
+                                    default:
+                                        break;
+                                }
                             }
 
                             Contrast -= 0.25f;
@@ -597,7 +809,33 @@ public static class Program
                                 string outputFileName = $"{fileNameWithoutExtension}_ContrastOben{Contrast}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                                resizedImage.Save(outputFilePath);
+                                switch (format.Name.ToLower())
+                                {
+                                    case "png":
+                                        resizedImage.Save(outputFilePath, new PngEncoder());
+                                        break;
+                                    case "jpeg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "jpg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "bmp":
+                                        resizedImage.Save(outputFilePath, new BmpEncoder());
+                                        break;
+                                    case "gif":
+                                        resizedImage.Save(outputFilePath, new GifEncoder());
+                                        break;
+                                    case "tiff":
+                                        resizedImage.Save(outputFilePath, new TiffEncoder());
+                                        break;
+                                    case "webp":
+                                        resizedImage.Save(outputFilePath, new WebpEncoder());
+                                        break;
+
+                                    default:
+                                        break;
+                                }
                             }
 
                             Contrast += 0.25f;
@@ -648,7 +886,33 @@ public static class Program
                                 string outputFileName = $"{fileNameWithoutExtension}_SaturateUnten{Saturate}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                                resizedImage.Save(outputFilePath);
+                                switch (format.Name.ToLower())
+                                {
+                                    case "png":
+                                        resizedImage.Save(outputFilePath, new PngEncoder());
+                                        break;
+                                    case "jpeg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "jpg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "bmp":
+                                        resizedImage.Save(outputFilePath, new BmpEncoder());
+                                        break;
+                                    case "gif":
+                                        resizedImage.Save(outputFilePath, new GifEncoder());
+                                        break;
+                                    case "tiff":
+                                        resizedImage.Save(outputFilePath, new TiffEncoder());
+                                        break;
+                                    case "webp":
+                                        resizedImage.Save(outputFilePath, new WebpEncoder());
+                                        break;
+
+                                    default:
+                                        break;
+                                }
                             }
 
                             Saturate -= 0.25f;
@@ -699,7 +963,33 @@ public static class Program
                                 string outputFileName = $"{fileNameWithoutExtension}_SaturateOben{Saturate}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                                resizedImage.Save(outputFilePath);
+                                switch (format.Name.ToLower())
+                                {
+                                    case "png":
+                                        resizedImage.Save(outputFilePath, new PngEncoder());
+                                        break;
+                                    case "jpeg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "jpg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "bmp":
+                                        resizedImage.Save(outputFilePath, new BmpEncoder());
+                                        break;
+                                    case "gif":
+                                        resizedImage.Save(outputFilePath, new GifEncoder());
+                                        break;
+                                    case "tiff":
+                                        resizedImage.Save(outputFilePath, new TiffEncoder());
+                                        break;
+                                    case "webp":
+                                        resizedImage.Save(outputFilePath, new WebpEncoder());
+                                        break;
+
+                                    default:
+                                        break;
+                                }
                             }
 
                             Saturate += 0.25f;
@@ -749,7 +1039,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_GaussianBlur.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -797,7 +1113,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_GaussianSharpen.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -849,7 +1191,33 @@ public static class Program
                                 string outputFileName = $"{fileNameWithoutExtension}_SkewPlus{skewAmount}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                                resizedImage.Save(outputFilePath);
+                                switch (format.Name.ToLower())
+                                {
+                                    case "png":
+                                        resizedImage.Save(outputFilePath, new PngEncoder());
+                                        break;
+                                    case "jpeg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "jpg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "bmp":
+                                        resizedImage.Save(outputFilePath, new BmpEncoder());
+                                        break;
+                                    case "gif":
+                                        resizedImage.Save(outputFilePath, new GifEncoder());
+                                        break;
+                                    case "tiff":
+                                        resizedImage.Save(outputFilePath, new TiffEncoder());
+                                        break;
+                                    case "webp":
+                                        resizedImage.Save(outputFilePath, new WebpEncoder());
+                                        break;
+
+                                    default:
+                                        break;
+                                }
                             }
 
 
@@ -902,7 +1270,33 @@ public static class Program
                                 string outputFileName = $"{fileNameWithoutExtension}_SkewMinus{skewAmount}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                                resizedImage.Save(outputFilePath);
+                                switch (format.Name.ToLower())
+                                {
+                                    case "png":
+                                        resizedImage.Save(outputFilePath, new PngEncoder());
+                                        break;
+                                    case "jpeg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "jpg":
+                                        resizedImage.Save(outputFilePath, new JpegEncoder());
+                                        break;
+                                    case "bmp":
+                                        resizedImage.Save(outputFilePath, new BmpEncoder());
+                                        break;
+                                    case "gif":
+                                        resizedImage.Save(outputFilePath, new GifEncoder());
+                                        break;
+                                    case "tiff":
+                                        resizedImage.Save(outputFilePath, new TiffEncoder());
+                                        break;
+                                    case "webp":
+                                        resizedImage.Save(outputFilePath, new WebpEncoder());
+                                        break;
+
+                                    default:
+                                        break;
+                                }
                             }
 
                         }
@@ -949,7 +1343,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_AdaptiveThreshold.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -995,7 +1415,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_QuantizeWebSafe.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1041,7 +1487,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_QuantizeOctree.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1087,7 +1559,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_QuantizeWu.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1133,7 +1631,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_QuantizeWerner.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1179,7 +1703,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_Sepia.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1225,7 +1775,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_Vignette.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1271,7 +1847,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_BlackWhite.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1317,7 +1919,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_BokehBlur.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1363,7 +1991,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_BoxBlur.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1409,7 +2063,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_DetectEdges.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1455,7 +2135,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_Dither.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1501,7 +2207,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_EntropyCrop.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1547,7 +2279,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_Glow.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1593,7 +2351,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_HistogramEqualization.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1639,7 +2423,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_Invert.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1685,7 +2495,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_Kodachrome.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1731,7 +2567,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_Lomograph.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1777,7 +2639,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_OilPaint.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1823,7 +2711,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_Pixelate.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
@@ -1869,7 +2783,33 @@ public static class Program
                             string outputFileName = $"{fileNameWithoutExtension}_Polaroid.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
-                            resizedImage.Save(outputFilePath);
+                            switch (format.Name.ToLower())
+                            {
+                                case "png":
+                                    resizedImage.Save(outputFilePath, new PngEncoder());
+                                    break;
+                                case "jpeg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "jpg":
+                                    resizedImage.Save(outputFilePath, new JpegEncoder());
+                                    break;
+                                case "bmp":
+                                    resizedImage.Save(outputFilePath, new BmpEncoder());
+                                    break;
+                                case "gif":
+                                    resizedImage.Save(outputFilePath, new GifEncoder());
+                                    break;
+                                case "tiff":
+                                    resizedImage.Save(outputFilePath, new TiffEncoder());
+                                    break;
+                                case "webp":
+                                    resizedImage.Save(outputFilePath, new WebpEncoder());
+                                    break;
+
+                                default:
+                                    break;
+                            }
                         }
 
                     }
