@@ -149,7 +149,7 @@ public static class Program
                 }
             }
 
-            Console.WriteLine("\nFormat ändern abgeschlossen!");
+            //Console.WriteLine("\nFormat ändern abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -209,7 +209,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nResize abgeschlossen!");
+            //Console.WriteLine("\nResize abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -244,7 +244,9 @@ public static class Program
 
                             using (var resizedImage = image.Clone(x => x.Rotate(rotateFactor)))
                             {
-                                string outputFileName = $"{fileNameWithoutExtension}_Rotation{rotateFactor}.png";
+                                var format = image.Metadata.DecodedImageFormat;
+
+                                string outputFileName = $"{fileNameWithoutExtension}_Rotation{rotateFactor}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                                 resizedImage.Save(outputFilePath);
@@ -263,7 +265,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nRotation abgeschlossen!");
+            //Console.WriteLine("\nRotation abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -291,7 +293,9 @@ public static class Program
 
                         using (var resizedImage = image.Clone(x => x.Flip(FlipMode.Horizontal)))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_FlipHorisontal.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_FlipHorisontal.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -308,7 +312,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nFlip Horisontal abgeschlossen!");
+            //Console.WriteLine("\nFlip Horisontal abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -336,7 +340,9 @@ public static class Program
 
                         using (var resizedImage = image.Clone(x => x.Flip(FlipMode.Vertical)))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_FlipVertical.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_FlipVertical.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -353,7 +359,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nFlip Vertical abgeschlossen!");
+            //Console.WriteLine("\nFlip Vertical abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -382,7 +388,9 @@ public static class Program
 
                         using (var resizedImage = image.Clone(x => x.Grayscale()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_FarbeGray.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_FarbeGray.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -398,7 +406,7 @@ public static class Program
                     double progress = (double)currentImage / totalImages * 100;
                     Console.Write($"\rFarbe Gray: [{new string('#', (int)(progress / 4))}{new string(' ', 25 - (int)(progress / 4))}] {progress:F2}%");
                 }
-                Console.WriteLine("\nFarbe Gray abgeschlossen!");
+                //Console.WriteLine("\nFarbe Gray abgeschlossen!");
 
             }
         }
@@ -430,7 +438,9 @@ public static class Program
                         {
                             using (var resizedImage = image.Clone(x => x.Brightness(_brightness)))
                             {
-                                string outputFileName = $"{fileNameWithoutExtension}_BrightnessDunkel{_brightness}.png";
+                                var format = image.Metadata.DecodedImageFormat;
+
+                                string outputFileName = $"{fileNameWithoutExtension}_BrightnessDunkel{_brightness}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                                 resizedImage.Save(outputFilePath);
@@ -449,7 +459,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nBrightness Dunkel abgeschlossen!");
+            //Console.WriteLine("\nBrightness Dunkel abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -479,7 +489,9 @@ public static class Program
                         {
                             using (var resizedImage = image.Clone(x => x.Brightness(_brightness)))
                             {
-                                string outputFileName = $"{fileNameWithoutExtension}_BrightnessHell{_brightness}.png";
+                                var format = image.Metadata.DecodedImageFormat;
+
+                                string outputFileName = $"{fileNameWithoutExtension}_BrightnessHell{_brightness}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                                 resizedImage.Save(outputFilePath);
@@ -499,7 +511,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nBrightness Hell abgeschlossen!");
+            //Console.WriteLine("\nBrightness Hell abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -529,7 +541,9 @@ public static class Program
                         {
                             using (var resizedImage = image.Clone(x => x.Contrast(Contrast)))
                             {
-                                string outputFileName = $"{fileNameWithoutExtension}_ContrastUnten{Contrast}.png";
+                                var format = image.Metadata.DecodedImageFormat;
+
+                                string outputFileName = $"{fileNameWithoutExtension}_ContrastUnten{Contrast}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                                 resizedImage.Save(outputFilePath);
@@ -548,7 +562,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nContrast niedrig abgeschlossen!");
+            //Console.WriteLine("\nContrast niedrig abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -578,7 +592,9 @@ public static class Program
                         {
                             using (var resizedImage = image.Clone(x => x.Contrast(Contrast)))
                             {
-                                string outputFileName = $"{fileNameWithoutExtension}_ContrastOben{Contrast}.png";
+                                var format = image.Metadata.DecodedImageFormat;
+
+                                string outputFileName = $"{fileNameWithoutExtension}_ContrastOben{Contrast}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                                 resizedImage.Save(outputFilePath);
@@ -597,7 +613,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nContrast hoch abgeschlossen!");
+            //Console.WriteLine("\nContrast hoch abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -627,7 +643,9 @@ public static class Program
                         {
                             using (var resizedImage = image.Clone(x => x.Contrast(Saturate)))
                             {
-                                string outputFileName = $"{fileNameWithoutExtension}_SaturateUnten{Saturate}.png";
+                                var format = image.Metadata.DecodedImageFormat;
+
+                                string outputFileName = $"{fileNameWithoutExtension}_SaturateUnten{Saturate}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                                 resizedImage.Save(outputFilePath);
@@ -646,7 +664,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nSaturate niedrig abgeschlossen!");
+            //Console.WriteLine("\nSaturate niedrig abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -676,7 +694,9 @@ public static class Program
                         {
                             using (var resizedImage = image.Clone(x => x.Contrast(Saturate)))
                             {
-                                string outputFileName = $"{fileNameWithoutExtension}_SaturateOben{Saturate}.png";
+                                var format = image.Metadata.DecodedImageFormat;
+
+                                string outputFileName = $"{fileNameWithoutExtension}_SaturateOben{Saturate}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                                 resizedImage.Save(outputFilePath);
@@ -695,7 +715,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nSaturate hoch abgeschlossen!");
+            //Console.WriteLine("\nSaturate hoch abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -724,7 +744,9 @@ public static class Program
 
                         using (var resizedImage = image.Clone(x => x.GaussianBlur()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_GaussianBlur.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_GaussianBlur.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -741,7 +763,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nGaussian Blur abgeschlossen!");
+            //Console.WriteLine("\nGaussian Blur abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -770,7 +792,9 @@ public static class Program
 
                         using (var resizedImage = image.Clone(x => x.GaussianSharpen()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_GaussianSharpen.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_GaussianSharpen.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -787,7 +811,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nGaussian Sharpen abgeschlossen!");
+            //Console.WriteLine("\nGaussian Sharpen abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -820,7 +844,9 @@ public static class Program
                             float skewAmount = (float)(rnd.NextDouble() * 40 - 20);
                             using (var resizedImage = image.Clone(x => x.Skew(skewAmount, skewAmount)))
                             {
-                                string outputFileName = $"{fileNameWithoutExtension}_SkewPlus{skewAmount}.png";
+                                var format = image.Metadata.DecodedImageFormat;
+
+                                string outputFileName = $"{fileNameWithoutExtension}_SkewPlus{skewAmount}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                                 resizedImage.Save(outputFilePath);
@@ -828,7 +854,7 @@ public static class Program
 
 
                         }
-                        Console.WriteLine("\nSkew Plus abgeschlossen!");
+                        //Console.WriteLine("\nSkew Plus abgeschlossen!");
                     }
                     else
                     {
@@ -871,7 +897,9 @@ public static class Program
                             float skewAmount = (float)(rnd.NextDouble() * 40 - 20);
                             using (var resizedImage = image.Clone(x => x.Skew(skewAmount, skewAmount)))
                             {
-                                string outputFileName = $"{fileNameWithoutExtension}_SkewMinus{skewAmount}.png";
+                                var format = image.Metadata.DecodedImageFormat;
+
+                                string outputFileName = $"{fileNameWithoutExtension}_SkewMinus{skewAmount}.{format.Name}";
                                 string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                                 resizedImage.Save(outputFilePath);
@@ -889,7 +917,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nSkew Minus abgeschlossen!");
+            //Console.WriteLine("\nSkew Minus abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -916,7 +944,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.AdaptiveThreshold()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_AdaptiveThreshold.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_AdaptiveThreshold.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -933,7 +963,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nAdaptive Threshold abgeschlossen!");
+            //Console.WriteLine("\nAdaptive Threshold abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -960,7 +990,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Quantize(KnownQuantizers.WebSafe)))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_QuantizeWebSafe.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_QuantizeWebSafe.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -977,7 +1009,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nQuantize Web Safe abgeschlossen!");
+            //Console.WriteLine("\nQuantize Web Safe abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1004,7 +1036,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Quantize(KnownQuantizers.Octree)))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_QuantizeOctree.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_QuantizeOctree.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1021,7 +1055,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nQuantize Octree abgeschlossen!");
+            //Console.WriteLine("\nQuantize Octree abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1048,7 +1082,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Quantize(KnownQuantizers.Wu)))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_QuantizeWu.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_QuantizeWu.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1065,7 +1101,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nQuantize Wu abgeschlossen!");
+            //Console.WriteLine("\nQuantize Wu abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1092,7 +1128,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Quantize(KnownQuantizers.Werner)))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_QuantizeWerner.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_QuantizeWerner.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1109,7 +1147,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nQuantize Werner abgeschlossen!");
+            //Console.WriteLine("\nQuantize Werner abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1136,7 +1174,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Sepia()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_Sepia.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_Sepia.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1153,7 +1193,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nSepia abgeschlossen!");
+            //Console.WriteLine("\nSepia abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1180,7 +1220,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Vignette()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_Vignette.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_Vignette.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1197,7 +1239,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nVignette abgeschlossen!");
+            //Console.WriteLine("\nVignette abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1224,7 +1266,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.BlackWhite()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_BlackWhite.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_BlackWhite.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1241,7 +1285,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nBlackWhite abgeschlossen!");
+            //Console.WriteLine("\nBlackWhite abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1268,7 +1312,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.BokehBlur()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_BokehBlur.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_BokehBlur.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1285,7 +1331,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nBokehBlur abgeschlossen!");
+            //Console.WriteLine("\nBokehBlur abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1312,7 +1358,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.BoxBlur()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_BoxBlur.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_BoxBlur.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1329,7 +1377,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nBoxBlur abgeschlossen!");
+            //Console.WriteLine("\nBoxBlur abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1356,7 +1404,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.DetectEdges()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_DetectEdges.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_DetectEdges.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1373,7 +1423,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nDetectEdges abgeschlossen!");
+            //Console.WriteLine("\nDetectEdges abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1400,7 +1450,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Dither()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_Dither.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_Dither.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1417,7 +1469,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nDither abgeschlossen!");
+            //Console.WriteLine("\nDither abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1444,7 +1496,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.EntropyCrop()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_EntropyCrop.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_EntropyCrop.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1461,7 +1515,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nEntropyCrop abgeschlossen!");
+            //Console.WriteLine("\nEntropyCrop abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1488,7 +1542,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Glow()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_Glow.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_Glow.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1505,7 +1561,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nGlow abgeschlossen!");
+            //Console.WriteLine("\nGlow abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1532,7 +1588,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.HistogramEqualization()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_HistogramEqualization.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_HistogramEqualization.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1549,7 +1607,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nHistogramEqualization abgeschlossen!");
+            //Console.WriteLine("\nHistogramEqualization abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1576,7 +1634,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Invert()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_Invert.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_Invert.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1593,7 +1653,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nInvert abgeschlossen!");
+            //Console.WriteLine("\nInvert abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1620,7 +1680,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Kodachrome()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_Kodachrome.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_Kodachrome.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1637,7 +1699,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nKodachrome abgeschlossen!");
+            //Console.WriteLine("\nKodachrome abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1664,7 +1726,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Lomograph()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_Lomograph.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_Lomograph.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1681,7 +1745,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nLomograph abgeschlossen!");
+            //Console.WriteLine("\nLomograph abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1708,7 +1772,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.OilPaint()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_OilPaint.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_OilPaint.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1725,7 +1791,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nOilPaint abgeschlossen!");
+            //Console.WriteLine("\nOilPaint abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1752,7 +1818,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Pixelate()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_Pixelate.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_Pixelate.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1769,7 +1837,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nPixelate abgeschlossen!");
+            //Console.WriteLine("\nPixelate abgeschlossen!");
         }
         catch (Exception ex)
         {
@@ -1796,7 +1864,9 @@ public static class Program
                     {
                         using (var resizedImage = image.Clone(x => x.Polaroid()))
                         {
-                            string outputFileName = $"{fileNameWithoutExtension}_Polaroid.png";
+                            var format = image.Metadata.DecodedImageFormat;
+
+                            string outputFileName = $"{fileNameWithoutExtension}_Polaroid.{format.Name}";
                             string outputFilePath = Path.Combine(directoryPath, outputFileName);
 
                             resizedImage.Save(outputFilePath);
@@ -1813,7 +1883,7 @@ public static class Program
                 }
 
             }
-            Console.WriteLine("\nPolaroid abgeschlossen!");
+            //Console.WriteLine("\nPolaroid abgeschlossen!");
         }
         catch (Exception ex)
         {
