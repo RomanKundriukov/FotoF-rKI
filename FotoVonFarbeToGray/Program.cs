@@ -168,7 +168,6 @@ public static class Program
         try
         {
             // List<string> formats = GetFileFormats(directoryPath);
-
             int totalImages = dataPath.Count;
             int currentImage = 0;
 
@@ -2855,24 +2854,24 @@ public static class Program
                 _files = GetAllFiles(path);
 
                 FotoResize(_files, path);
-                //FotoRotation(_files, path);
-                //FotoFlipHorisontal(_files, path);
-                //FotoFlipVertical(_files, path);
-                //FotoBrightnessDunkel(_files, path);
-                //FotoBrightnessHell(_files, path);
-                //FotoContrastOben(_files, path);
-                //FotoContrastUnten(_files, path);
-                //FotoGaussianBlur(_files, path);
-                //FotoSaturateOben(_files, path);
-                //FotoSaturateUnten(_files, path);
-                //FotoSepia(_files, path);
-                //FotoBlackWhite(_files, path);
-                //FotoInvert(_files, path);
-                //FotoDetectEdges(_files, path);
-                //FotoEntropyCrop(_files, path);
-                //FotoHistogramEqualization(_files, path);
-                //FotoSkewPlus(_files, path);
-                //FotoSkewMinus(_files, path);
+                FotoRotation(_files, path);
+                FotoFlipHorisontal(_files, path);
+                FotoFlipVertical(_files, path);
+                FotoBrightnessDunkel(_files, path);
+                FotoBrightnessHell(_files, path);
+                FotoContrastOben(_files, path);
+                FotoContrastUnten(_files, path);
+                FotoGaussianBlur(_files, path);
+                FotoSaturateOben(_files, path);
+                FotoSaturateUnten(_files, path);
+                FotoSepia(_files, path);
+                FotoBlackWhite(_files, path);
+                FotoInvert(_files, path);
+                FotoDetectEdges(_files, path);
+                FotoEntropyCrop(_files, path);
+                FotoHistogramEqualization(_files, path);
+                FotoSkewPlus(_files, path);
+                FotoSkewMinus(_files, path);
 
             }
             else
@@ -2924,24 +2923,24 @@ public static class Program
                     //_dirFiles = GetAllFiles(item);
 
                     FotoResize(_dirFiles, item);
-                    //FotoRotation(_dirFiles, item);
-                    //FotoFlipHorisontal(_dirFiles, item);
-                    //FotoFlipVertical(_dirFiles, item);
-                    //FotoBrightnessDunkel(_dirFiles, item);
-                    //FotoBrightnessHell(_dirFiles, item);
-                    //FotoContrastOben(_dirFiles, item);
-                    //FotoContrastUnten(_dirFiles, item);
-                    //FotoGaussianBlur(_dirFiles, item);
-                    //FotoSaturateOben(_dirFiles, item);
-                    //FotoSaturateUnten(_dirFiles, item);
-                    //FotoSepia(_dirFiles, item);
-                    //FotoBlackWhite(_dirFiles, item);
-                    //FotoInvert(_dirFiles, item);
-                    //FotoDetectEdges(_dirFiles, item);
-                    //FotoEntropyCrop(_dirFiles, item);
-                    //FotoHistogramEqualization(_dirFiles, item);
-                    //FotoSkewPlus(_dirFiles, item);
-                    //FotoSkewMinus(_dirFiles, item);
+                    FotoRotation(_dirFiles, item);
+                    FotoFlipHorisontal(_dirFiles, item);
+                    FotoFlipVertical(_dirFiles, item);
+                    FotoBrightnessDunkel(_dirFiles, item);
+                    FotoBrightnessHell(_dirFiles, item);
+                    FotoContrastOben(_dirFiles, item);
+                    FotoContrastUnten(_dirFiles, item);
+                    FotoGaussianBlur(_dirFiles, item);
+                    FotoSaturateOben(_dirFiles, item);
+                    FotoSaturateUnten(_dirFiles, item);
+                    FotoSepia(_dirFiles, item);
+                    FotoBlackWhite(_dirFiles, item);
+                    FotoInvert(_dirFiles, item);
+                    FotoDetectEdges(_dirFiles, item);
+                    FotoEntropyCrop(_dirFiles, item);
+                    FotoHistogramEqualization(_dirFiles, item);
+                    FotoSkewPlus(_dirFiles, item);
+                    FotoSkewMinus(_dirFiles, item);
                 });
 
             }
